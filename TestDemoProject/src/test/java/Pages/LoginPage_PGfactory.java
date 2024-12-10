@@ -46,12 +46,9 @@ public class LoginPage_PGfactory {
 	
 	public void loginWithValidCred(WebDriver driver) {
 		driver.get(Data.getLoginURL());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		buttonclick(LoginButton , driver);
 		enterValue(Usernamebox, Data.getUserName());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		enterValue(Passwordbox, Data.getPassword());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		buttonclick(SubmiButton, driver);
 		
 	}
