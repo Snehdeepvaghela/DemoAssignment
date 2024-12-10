@@ -2,6 +2,8 @@ package com.testdemo;
 import org.testng.annotations.Test;
 import Pages.LoginPage;
 import org.testng.annotations.BeforeMethod;
+
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,13 +23,13 @@ public class LoginTest {
 	  login.assignLocators(driver);
 	  login.loginWithValidCred(driver);
   }
-  @SuppressWarnings("deprecation")
+  
 @BeforeMethod
   public void beforeMethod() {
 	  System.setProperty("webdriver.chrome.driver", "./chromedriver_win32\\chromedriver.exe");
 	  driver = new ChromeDriver();
       driver.manage().window().maximize();
-      driver.manage().timeouts().pageLoadTimeout(5,TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	  
   }
 
